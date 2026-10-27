@@ -1,0 +1,147 @@
+{
+  "dataset_meta": {
+    "source": "data/sample_dataset.csv",
+    "raw_samples": 264,
+    "cleaned_samples": 99,
+    "train_samples": 78,
+    "test_samples": 21,
+    "train_projects": [
+      "auth_service",
+      "billing_gateway",
+      "cms_engine",
+      "data_pipeline",
+      "ecom_api",
+      "fleet_tracker",
+      "inventory_sync",
+      "job_scheduler",
+      "kms_vault"
+    ],
+    "test_projects": [
+      "gateway_proxy",
+      "health_portal",
+      "log_aggregator"
+    ]
+  },
+  "model_meta": {
+    "algorithm": "RandomForestClassifier(multiclass)",
+    "best_params": {
+      "max_depth": 6,
+      "min_samples_split": 2,
+      "n_estimators": 50
+    },
+    "cv_f1_macro": 0.8142857142857144,
+    "top_features": [
+      [
+        "eval_exec_calls",
+        0.0
+      ],
+      [
+        "os_system_calls",
+        0.025418072174832954
+      ],
+      [
+        "subprocess_calls",
+        0.045136693862158135
+      ],
+      [
+        "shell_true_flag",
+        0.09831756832119887
+      ],
+      [
+        "pickle_calls",
+        0.08485023485210987
+      ]
+    ]
+  },
+  "evaluation_metrics": [
+    {
+      "Method": "Machine Learning (RF)",
+      "tp": 12,
+      "fp": 0,
+      "tn": 9,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "F1": 1.0,
+      "false_positive_rate": 0.0,
+      "accuracy": 1.0
+    },
+    {
+      "Method": "Bandit Baseline",
+      "tp": 12,
+      "fp": 3,
+      "tn": 6,
+      "fn": 0,
+      "precision": 0.8,
+      "recall": 1.0,
+      "F1": 0.8889,
+      "false_positive_rate": 0.3333,
+      "accuracy": 0.8571
+    },
+    {
+      "Method": "Hybrid (Agreement: ML & Bandit)",
+      "tp": 12,
+      "fp": 0,
+      "tn": 9,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "F1": 1.0,
+      "false_positive_rate": 0.0,
+      "accuracy": 1.0
+    },
+    {
+      "Method": "Hybrid (Either: ML | Bandit)",
+      "tp": 12,
+      "fp": 3,
+      "tn": 6,
+      "fn": 0,
+      "precision": 0.8,
+      "recall": 1.0,
+      "F1": 0.8889,
+      "false_positive_rate": 0.3333,
+      "accuracy": 0.8571
+    }
+  ],
+  "mcnemar_significance": {
+    "ml_vs_bandit": {
+      "statistic": 3.0,
+      "p_value": 0.25,
+      "method": "exact_binomial",
+      "contingency_table": {
+        "a": 18,
+        "b": 3,
+        "c": 0,
+        "d": 0
+      },
+      "discordant_pairs": 3,
+      "significant": false
+    },
+    "hybrid_agree_vs_bandit": {
+      "statistic": 3.0,
+      "p_value": 0.25,
+      "method": "exact_binomial",
+      "contingency_table": {
+        "a": 18,
+        "b": 3,
+        "c": 0,
+        "d": 0
+      },
+      "discordant_pairs": 3,
+      "significant": false
+    },
+    "hybrid_agree_vs_ml": {
+      "statistic": 0.0,
+      "p_value": 1.0,
+      "method": "exact_binomial",
+      "contingency_table": {
+        "a": 21,
+        "b": 0,
+        "c": 0,
+        "d": 0
+      },
+      "discordant_pairs": 0,
+      "significant": false
+    }
+  }
+}
