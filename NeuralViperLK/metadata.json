@@ -1,6 +1,0 @@
-{
-  "name": "NeuralViperLK - Explainable Vulnerability Detection Workbench",
-  "description": "An explainable machine learning tool and academic evaluation workbench detecting security vulnerabilities (CWE-89, CWE-78, CWE-798, CWE-502) in Python code, benchmarked against Bandit static analysis for COM752 Dissertation.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
